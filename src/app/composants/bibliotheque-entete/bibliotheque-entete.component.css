@@ -1,0 +1,12 @@
+mat-toolbar {
+    padding: 20px;
+}
+
+mat-chip-set {
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 35px;
+    margin-right: 10px;
+}

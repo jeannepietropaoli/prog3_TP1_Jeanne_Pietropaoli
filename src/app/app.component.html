@@ -1,0 +1,23 @@
+<main class="main">
+  <mat-drawer-container class="page" autosize>
+    <!-- Contenu du menu latéral (bibliothèque des listes sommaires) -->
+    <mat-drawer #drawer class="page__sidenav" mode="side" [opened]="menuOuvert">
+      <app-bibliotheque></app-bibliotheque>
+    </mat-drawer>
+    
+    <!-- Contenu principal (liste ou chanson détaillée) -->
+    <div class="page__content">
+        <!--Bouton toggle menu bibliothèque -->
+        <button mat-mini-fab aria-label="Ouvrir le menu bibliothèque" class="menu-btn" (click)="drawer.toggle()">
+            @if(drawer.opened) {
+                <mat-icon>menu_open</mat-icon>
+            }
+            @else {
+                <mat-icon>menu</mat-icon>
+            }
+        </button>
+        <!-- Contenu en fonction du paramètre dans l'url: chanson ou liste détailée (ou les 2 pour le bien du TP) -->
+        <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</main>

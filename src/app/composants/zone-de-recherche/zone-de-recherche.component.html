@@ -1,0 +1,10 @@
+<mat-form-field>
+    <mat-label>Rechercher dans la bibliothèque...</mat-label>
+    <mat-icon matTextPrefix class="loupe">search</mat-icon>
+    <input matInput type="text" [(ngModel)]="valeurInputRecherche">
+    @if (valeurInputRecherche) {
+      <button class="input__btn" matSuffix mat-icon-button aria-label="Clear" (click)="valeurInputRecherche=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    }
+</mat-form-field>

@@ -1,0 +1,21 @@
+mat-icon.lock {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--mat-accent);
+}
+
+mat-icon.verified {
+   color: var(--mat-accent);
+}
+
+.list-icon {
+    display: flex;
+    font-size: 0.8rem;
+    justify-items: center;
+    gap: 3px;
+}
+
+.list-icon mat-icon {
+    position: relative;
+    top: -2px;
+}

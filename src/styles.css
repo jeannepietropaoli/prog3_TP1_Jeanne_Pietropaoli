@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-height: 100%; }
+* {box-sizing: border-box;}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+:root {
+    --mat-primary: #673ab7; /* Deep Purple */
+    --mat-primary-contrast: #ffffff; /* White */
+    --mat-accent: #ffd740; /* Amber */
+    --mat-accent-contrast: #000000; /* Black */
+    --mat-warn: #f44336; /* Red */
+    --mat-warn-contrast: #ffffff; /* White */
+    --light-grey:#f3f1f1;
+  }
+  
+/* Style des pages détails */
+
+.page-details-entete {
+  background-color: var(--mat-primary);
+  color: rgb(243, 243, 243);
+  padding: 40px 50px;
+  display: flex;
+  font-size: 0.8rem;
+  gap: 20px;
+  align-items: center;
+}
+
+.page-details-content {
+  padding: 20px 50px;
+}
+
+.page-details-entete p {
+  margin: 0;
+}
+
+.page-details-entete__img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  box-shadow: -3px 3px 10px rgb(56, 56, 56);
+  padding: 12px;
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid var(--mat-accent);
+}
+
+.page-details-entete__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.page-details-entete__type {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.page-details-entete__titre {
+  font-weight: 900 !important;
+  font-size: 2.5rem !important;
+  margin: 4px 0px 12px 0px !important;
+}
+
+.page-details-entete__infos-generales {
+  font-weight: 500;
+}
+
+.page-details-entete__infos-secondaires {
+  margin: -2px -2px;
+  display: flex;
+  align-items: center;
+}
+
+.page-details-content__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-details-content__sous-titre {
+  font-weight: 500;
+}
+
+/* utilities */
+
+.spacer {
+  margin: 0 2px;
+  font-size: 2rem;
+  position: relative;
+  top: 6px;
+  color: var(--mat-accent);
+  transition: all 200ms ease-in-out;
+}
+
+.spacer--dark {
+  color: var(--mat-primary);
+}
+
+.play-btn {
+  background-color: transparent;
+  height: fit-content !important;
+  width: fit-content !important;
+  color: var(--mat-primary);
+  font-size: 3.7rem;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  color: var(--mat-accent);
+}
+
+.play-btn:active {
+  color: rgb(73, 49, 73);
+}

@@ -1,0 +1,16 @@
+/* classes conditionnelles en fonction du nombre de lectures */
+.populaire::after,
+.impopulaire::after {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--mat-accent);
+    margin-left: 10px;
+}
+
+.populaire::after {
+    content: '↗';
+}
+
+.impopulaire::after {
+    content: '↘';
+}

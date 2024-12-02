@@ -1,0 +1,30 @@
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.table-header__icon {
+    font-size: 1.25rem;
+}
+
+::ng-deep tbody > tr:hover {
+    cursor: pointer;
+    background-color: rgb(243, 243, 243);
+}
+/* ne fonctionnait pas sans ::ng-deep, permet de ne pas s'en tenir au scope du composant tableau-chansons */
+
+/* classes conditionnelles en fonction du nombre de lectures */
+.populaire::after,
+.impopulaire::after {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.populaire::after {
+    content: '↗';
+    color: green;
+}
+
+.impopulaire::after {
+    content: '↘';
+    color: red;
+}

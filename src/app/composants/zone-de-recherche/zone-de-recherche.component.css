@@ -1,0 +1,23 @@
+mat-form-field {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.loupe {
+    margin-right: 10px;
+}
+
+.input__btn {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid var(--mat-primary);
+    border-radius: 8px;
+    color: var(--mat-primary);
+}
+
+.input__btn:hover {
+    background-color: rgb(233, 233, 233);
+}

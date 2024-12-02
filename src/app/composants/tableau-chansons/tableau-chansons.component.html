@@ -1,0 +1,47 @@
+<!-- Tableau avec tri par ordre d'Angular Material -->
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    
+  <!-- Colonne index (numero de la chanson dans le tableau) -->
+  <ng-container matColumnDef="index">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par id">
+      #
+    </th>
+    <td mat-cell *matCellDef="let chanson; let i = index"> {{i + 1}} </td>
+  </ng-container>
+
+  <!-- Colonne titre -->
+  <ng-container matColumnDef="titre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par titre">
+      Titre
+    </th>
+    <td mat-cell *matCellDef="let chanson"> {{chanson.titre}} </td>
+  </ng-container>
+
+  <!-- Colonne artiste -->
+  <ng-container matColumnDef="artiste">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par artiste">
+      Artiste
+    </th>
+    <td mat-cell *matCellDef="let chanson"> {{chanson.artiste}} </td>
+  </ng-container>
+
+  <!-- Colonne durée -->
+  <ng-container matColumnDef="duree">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par durée">
+      <mat-icon class="table-header__icon">access_time</mat-icon>
+    </th>
+    <td mat-cell *matCellDef="let chanson"> {{chanson.duree | dureeHeureMinSec | dureeFormatteDeuxChiffres }} </td>
+  </ng-container>
+
+  <!-- Colonne nombre de lectures -->
+  <ng-container matColumnDef="nombreLecture">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par nombre de lectures">
+      Nb de lectures
+    </th>
+    <td mat-cell *matCellDef="let chanson" [class]="classesChanson(chanson)"> {{chanson.nombreLecture}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/details-chanson', row.id]"></tr>
+</table>

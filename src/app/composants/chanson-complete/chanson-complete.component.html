@@ -1,0 +1,42 @@
+<!-- Entête détails chanson -->
+<div class="page-details-entete">
+    <!-- Image -->
+    <img class="page-details-entete__img" src="../../../assets/logo-musique-defaut-orange.png" alt="Image de l'album de la chanson">
+    <div class="page-details-entete__content">
+         <!-- Infos importantes -->
+        <p class="page-details-entete__type">Titre</p>
+        <h2 class="page-details-entete__titre" [class]="classesChanson()">{{ chanson.titre }}</h2>
+         <!-- Infos secondaires -->
+        <div class="page-details-entete__infos-generales">
+            <span>{{ chanson.artiste }}</span>
+            <span class="spacer spacer--yellow"> • </span>
+            <span>{{ chanson.nomAlbum }}</span>
+            <span class="spacer spacer--yellow"> • </span>
+            <span>{{ chanson.datePublication }}</span>
+            <span class="spacer spacer--yellow"> • </span>
+            <span>{{ chanson.duree | dureeHeureMinSec | dureeFormatteDeuxChiffres }}</span>
+            <span class="spacer spacer--yellow"> • </span>
+            <span>{{ chanson.nombreLecture }} écoutes</span>
+        </div>
+    </div>
+</div>
+
+ <!-- Contenu (Paroles) -->
+<div class="page-details-content">
+    <div class="page-details-content__entete">
+        <!-- Bouton Play - non fonctionnel -->
+        <mat-icon class="play-btn" role="button">play_circle</mat-icon>
+    </div>
+
+    <!-- Liste des paroles -->
+    <h3 class="page-details-content__sous-titre">Paroles</h3>
+    @if(chanson.paroles) {
+        <ul>
+            @for(parole of chanson.paroles; track parole) {
+                <li>{{ parole }}</li>
+            }
+        </ul>
+    } @else {
+        <p>Paroles indisponibles</p>
+    }
+</div>

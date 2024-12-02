@@ -1,0 +1,22 @@
+.page {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.page__content {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: -5px;
+    border-radius: 0 0 50% 0;
+}
+
+mat-drawer {
+    border-radius: 0 0 22px 0;
+}

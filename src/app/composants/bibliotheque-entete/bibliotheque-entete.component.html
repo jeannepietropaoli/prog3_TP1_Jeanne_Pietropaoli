@@ -1,0 +1,20 @@
+<!-- toolbar -->
+<mat-toolbar>
+    <img src="assets/app-logo-noir.png" alt="Logo de l'application" class="logo">
+    <span>Bibliothèque</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Ajouter une liste de lecture">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Afficher plus">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+</mat-toolbar>
+<!-- Pastilles types de listes (chips) -->
+<mat-chip-set aria-label="Types de listes">
+  <mat-chip>Listes de lecture</mat-chip>
+  <mat-chip>Artistes</mat-chip>
+  <mat-chip>Albums</mat-chip>
+</mat-chip-set>
+<!-- zone de recherche -->
+<app-zone-de-recherche></app-zone-de-recherche>
