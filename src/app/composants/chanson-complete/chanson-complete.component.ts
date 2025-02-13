@@ -4,12 +4,13 @@ import { CHANSONS } from '../../mocks/chansons';
 import { DureeHeureMinSecPipe } from "../../pipes/duree-heure-min-sec.pipe";
 import { DureeFormatteDeuxChiffresPipe } from "../../pipes/duree-formatte-deux-chiffres.pipe";
 import { Chanson } from '../../interfaces/chanson';
+import { ContenuPrincipalLayoutComponent } from "../contenu-principal-layout/contenu-principal-layout.component";
 
 
 @Component({
   selector: 'app-chanson-complete',
   standalone: true,
-  imports: [MatIconModule, DureeFormatteDeuxChiffresPipe, DureeHeureMinSecPipe],
+  imports: [MatIconModule, DureeFormatteDeuxChiffresPipe, DureeHeureMinSecPipe, ContenuPrincipalLayoutComponent],
   templateUrl: './chanson-complete.component.html',
   styleUrl: './chanson-complete.component.css'
 })

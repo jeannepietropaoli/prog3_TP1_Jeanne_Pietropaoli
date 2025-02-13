@@ -1,0 +1,26 @@
+:host {
+    display: block;
+}
+
+nav {
+    display: flex;
+}
+
+ul {
+    margin-left: auto;
+    list-style: none;
+    padding: 10px 30px;
+    display: flex;
+    gap: 30px;
+}
+
+a {
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--mat-primary);
+}

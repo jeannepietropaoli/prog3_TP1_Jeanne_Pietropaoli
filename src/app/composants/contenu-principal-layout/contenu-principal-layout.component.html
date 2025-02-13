@@ -1,0 +1,20 @@
+<!-- Entête -->
+<div class="page-details-entete">
+    <!-- Image -->
+    <img class="page-details-entete__img" [src]="image" [alt]="altImage">
+
+    <div class="page-details-entete__content">
+        <!-- Infos importantes (type et titre) -->
+        <ng-content select="[infos-importantes]"></ng-content>
+        <!-- Infos secondaires -->
+        <div class="page-details-entete__infos-generales">
+            <ng-content select="[infos-secondaires]"></ng-content>
+        </div>
+    </div>
+</div>
+
+<!-- Contenu -->
+<div class="page-details-content page-details-content--txt">
+    <ng-content select="[contenu]"></ng-content>
+</div>
+

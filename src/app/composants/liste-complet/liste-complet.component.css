@@ -1,13 +1,3 @@
-mat-icon.lock {
-    font-size: 1.4rem;
-    margin: 0;
-    color: var(--mat-accent);
-}
-
-mat-icon.verified {
-   color: var(--mat-accent);
-}
-
 .list-icon {
     display: flex;
     font-size: 0.8rem;

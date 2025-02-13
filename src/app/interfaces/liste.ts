@@ -1,7 +1,7 @@
 import { Chanson } from "./chanson";
 
 export interface Liste {
-    id: number;
+    id: number; // doit etre optionnel 
     titre: string;
     sousTitre?: string;
     image?: string;
@@ -9,7 +9,7 @@ export interface Liste {
     type: string;
     verifie?: boolean;
     datePublication: string;
-    visibilite: boolean; // 0 si privé, 1 si publique
+    visibilite: boolean; // 0 (false) si privé, 1(true) si publique
     nombreSauvegardes: number;
     chansons: Chanson[]
 }

@@ -6,6 +6,8 @@
     </mat-drawer>
     
     <!-- Contenu principal (liste ou chanson détaillée) -->
+      <!-- Barre de navigation -->
+   <app-barre-navigation></app-barre-navigation>
     <div class="page__content">
         <!--Bouton toggle menu bibliothèque -->
         <button mat-mini-fab aria-label="Ouvrir le menu bibliothèque" class="menu-btn" (click)="drawer.toggle()">
@@ -16,7 +18,7 @@
                 <mat-icon>menu</mat-icon>
             }
         </button>
-        <!-- Contenu en fonction du paramètre dans l'url: chanson ou liste détailée (ou les 2 pour le bien du TP) -->
+        <!-- Contenu en fonction du paramètre dans l'url: chanson ou liste détailée -->
         <router-outlet></router-outlet>
     </div>
   </mat-drawer-container>

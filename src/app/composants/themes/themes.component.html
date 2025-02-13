@@ -1,0 +1,28 @@
+<app-contenu-principal-layout>
+    <div infos-importantes>
+        <p class="page-details-entete__type">Inspiration</p>
+        <h2 class="page-details-entete__titre">
+            Chansons par thèmes
+            <mat-icon class="verified">verified</mat-icon>
+        </h2>
+    </div>
+    <div infos-secondaires>
+        <span>Sorties 2025</span>
+        <span class="spacer spacer--yellow"> • </span>
+        <span>Extraites des albums best-of</span>
+        <span class="spacer spacer--yellow"> • </span>
+        <span>Moins connues</span>
+    </div>
+    <div contenu class="theme-contenu">
+        <div class="theme-contenu__btns">
+            @for(theme of themes; track theme.id) {
+                <button mat-fab extended (click)="selectionnerTheme(theme.id)" [classList]="themeSelectionne === theme ? 'btn--selected' : ''">
+                    <mat-icon class="btn__mat-icon">{{ theme.maticon }}</mat-icon>
+                    {{ theme.nom }}
+                  </button>
+            }
+        </div>
+        <p class="theme-contenu__description">{{ themeSelectionne.description }}</p>
+        <app-tableau-chansons [chansons]="chansonsFiltrees"></app-tableau-chansons>
+    </div>
+</app-contenu-principal-layout>

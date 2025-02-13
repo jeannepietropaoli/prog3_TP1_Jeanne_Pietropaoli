@@ -9,11 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ListeSommaireComponent } from './composants/liste-sommaire/liste-sommaire.component';
 import { LISTES } from './mocks/listes';
+import { BarreNavigationComponent } from "./composants/barre-navigation/barre-navigation.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BibliothequeComponent, ListeCompletComponent, MatSidenavModule, BibliothequeEnteteComponent, MatIconModule, MatButtonModule, MatToolbarModule, ListeSommaireComponent],
+  imports: [RouterOutlet, BibliothequeComponent, ListeCompletComponent, MatSidenavModule, BibliothequeEnteteComponent, MatIconModule, MatButtonModule, MatToolbarModule, ListeSommaireComponent, BarreNavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

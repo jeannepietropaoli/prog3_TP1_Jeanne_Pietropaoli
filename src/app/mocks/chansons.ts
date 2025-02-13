@@ -8,7 +8,7 @@ export const CHANSONS: Chanson[] = [
         nomAlbum: "Kind of Blue",
         datePublication: "1959-08-17",
         duree: 272,
-        nombreLecture: 5,
+        nombreLecture: 88,
         paroles: [
           'Eiusmod qui.',
           'Culpa elit.',
@@ -46,7 +46,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Sunshine Day",
       datePublication: "2020-05-20",
       duree: 3678,
-      nombreLecture: 98000,
+      nombreLecture: 98,
       paroles: [
         'Lorem ipsum.',
         'Dolor sit.',
@@ -72,7 +72,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Power Move",
       datePublication: "2023-01-15",
       duree: 230,
-      nombreLecture: 184000,
+      nombreLecture: 8943,
       paroles: [
         'Consectetur dolor.',
         'Incididunt ut.',
@@ -106,7 +106,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Inner Calm",
       datePublication: "2020-11-22",
       duree: 272,
-      nombreLecture: 102000
+      nombreLecture: 4200
   },
   {
       id: 7,
@@ -115,7 +115,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Road Trips",
       datePublication: "2021-04-18",
       duree: 225,
-      nombreLecture: 156000,
+      nombreLecture: 3000,
       paroles: [
         'Velit esse.',
         'Laborum fugiat.',
@@ -166,7 +166,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Party Hits",
       datePublication: "2023-02-12",
       duree: 245,
-      nombreLecture: 198000,
+      nombreLecture: 4850,
       paroles: [
         'Lorem amet.',
         'Dolor eu.',
@@ -183,7 +183,7 @@ export const CHANSONS: Chanson[] = [
       nomAlbum: "Focus Tunes",
       datePublication: "2019-10-03",
       duree: 252,
-      nombreLecture: 114000,
+      nombreLecture: 3567,
       paroles: [
         'Ut dolore.',
         'Magna sed.',
@@ -250,7 +250,7 @@ export const CHANSONS: Chanson[] = [
       titre: "Hidden Gems",
       artiste: "The Discoverers",
       nomAlbum: "Rare Finds",
-      datePublication: "2020-02-29",
+      datePublication: "2025-01-22",
       duree: 255,
       nombreLecture: 99000
   },
@@ -304,5 +304,39 @@ export const CHANSONS: Chanson[] = [
         'Dolore ut.',
         'Fugiat nisi.'
       ]
+  },
+  {
+    id: 21,
+    titre: "Shining Lights",
+    artiste: "The Wanderers",
+    nomAlbum: "Best of Pop",
+    datePublication: "2021-04-18",
+    duree: 225,
+    nombreLecture: 245000,
+    paroles: [
+      "Dancing shadows.",
+      "Golden dreams.",
+      "Feel the rhythm.",
+      "Hearts collide.",
+      "Love is calling.",
+      "Endless night."
+    ]
+  },
+  {
+    id: 22,
+    titre: "Rebel Roads",
+    artiste: "The Wanderers",
+    nomAlbum: "Best of Rock",
+    datePublication: "2025-01-18",
+    duree: 225,
+    nombreLecture: 189000,
+    paroles: [
+      "Thunder rolling.",
+      "Fires burning.",
+      "Break the chains.",
+      "Run forever.",
+      "No surrender.",
+      "Raise your voice."
+    ]
   },
 ];

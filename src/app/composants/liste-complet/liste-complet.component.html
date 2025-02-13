@@ -1,10 +1,6 @@
-<!-- Entête de la liste de lecture -->
-<div class="page-details-entete">
-    <!-- Image -->
-    <img class="page-details-entete__img" [src]="liste.image" alt="Image de la liste de lecture">
-
-    <div class="page-details-entete__content">
-        <!-- Infos importantes (type et titre) -->
+<app-contenu-principal-layout [image]="liste.image || ''" altImage="Image de la liste de lecture">
+    <!-- Entête -->
+    <div infos-importantes>
         <p class="page-details-entete__type">{{ liste.type }}</p>
         <h2 class="page-details-entete__titre">
             {{ liste.titre }}
@@ -12,17 +8,15 @@
                 <mat-icon class="verified">verified</mat-icon>
             }
         </h2>
-
-        <!-- Infos secondaires -->
-        <div class="page-details-entete__infos-generales">
-            @if(liste.sousTitre) {
-                <span>{{ liste.sousTitre }}</span>
-                <span class="spacer spacer--yellow"> • </span>
-            }
-            <span>Publié le {{ liste.datePublication }}</span>
+    </div>
+    <div infos-secondaires>
+        @if(liste.sousTitre) {
+            <span>{{ liste.sousTitre }}</span>
             <span class="spacer spacer--yellow"> • </span>
-            <span>{{ liste.nombreSauvegardes }} sauvegardes</span>
-        </div>
+        }
+        <span>Publié le {{ liste.datePublication }}</span>
+        <span class="spacer spacer--yellow"> • </span>
+        <span>{{ liste.nombreSauvegardes }} sauvegardes</span>
 
         <!-- Visibilité -->
         <p class="page-details-entete__description">{{ liste.description }}</p>
@@ -35,19 +29,19 @@
             <span>Liste {{ liste.visibilite ? 'publique' : 'privée' }}</span>
         </div>
     </div>
-</div>
 
-<!-- Contenu (liste de chansons) -->
-<div class="page-details-content">
-    <div class="page-details-content__entete">
-        <!-- Bouton Play - non fonctionnel -->
-        <mat-icon class="play-btn" role="button">play_circle</mat-icon>
-        <div class="list-icon">
-            <span>Liste</span>
-            <mat-icon role="button">list</mat-icon>
+    <!-- Contenu -->
+    <div contenu>
+        <div class="page-details-content__entete">
+            <!-- Bouton Play - non fonctionnel -->
+            <mat-icon class="play-btn" role="button">play_circle</mat-icon>
+            <div class="list-icon">
+                <span>Liste</span>
+                <mat-icon role="button">list</mat-icon>
+            </div>
         </div>
+    
+        <!-- Liste de chansons -->
+        <app-tableau-chansons [chansons]="liste.chansons"></app-tableau-chansons>
     </div>
-
-    <!-- Liste de chansons -->
-    <app-tableau-chansons [chansons]="liste.chansons"></app-tableau-chansons>
-</div>
+</app-contenu-principal-layout>
