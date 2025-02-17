@@ -1,0 +1,12 @@
+button {
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: inherit !important;
+    font-size: inherit !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: inherit !important;
+}

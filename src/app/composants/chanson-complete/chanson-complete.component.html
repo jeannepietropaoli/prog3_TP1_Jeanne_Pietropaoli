@@ -11,11 +11,15 @@
             <span class="spacer spacer--yellow"> • </span>
             <span>{{ chanson.nomAlbum }}</span>
             <span class="spacer spacer--yellow"> • </span>
-            <span>{{ chanson.datePublication }}</span>
+            <span>Publié {{ chanson.datePublication | nbJoursDepuisDate }}</span>
             <span class="spacer spacer--yellow"> • </span>
             <span>{{ chanson.duree | dureeHeureMinSec | dureeFormatteDeuxChiffres }}</span>
             <span class="spacer spacer--yellow"> • </span>
-            <span>{{ chanson.nombreLecture }} écoutes</span>
+            <span>
+                <app-tooltip [message]="chanson.nombreLecture | i18nPlural: tooltipNbEcoutesMessage">
+                    {{ chanson.nombreLecture | formatterNombreUnitesMiliersMillions }} écoutes
+                </app-tooltip>
+            </span>
     </div>
 
     <!-- Contenu -->
@@ -28,11 +32,7 @@
         <!-- Liste des paroles -->
         <h3 class="page-details-content__sous-titre">Paroles</h3>
         @if(chanson.paroles) {
-            <ul>
-                @for(parole of chanson.paroles; track parole) {
-                    <li>{{ parole }}</li>
-                }
-            </ul>
+            <p>{{ chanson.paroles }}</p>
         } @else {
             <p>Paroles indisponibles</p>
         }

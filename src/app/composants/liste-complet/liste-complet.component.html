@@ -14,9 +14,11 @@
             <span>{{ liste.sousTitre }}</span>
             <span class="spacer spacer--yellow"> • </span>
         }
-        <span>Publié le {{ liste.datePublication }}</span>
+        <span>Publié {{ liste.datePublication | nbJoursDepuisDate }}</span>
         <span class="spacer spacer--yellow"> • </span>
-        <span>{{ liste.nombreSauvegardes }} sauvegardes</span>
+        <app-tooltip [message]="liste.nombreSauvegardes | i18nPlural: tooltipNbSauvegardesMessage">
+            {{ liste.nombreSauvegardes | formatterNombreUnitesMiliersMillions }} sauvegardes
+        </app-tooltip>
 
         <!-- Visibilité -->
         <p class="page-details-entete__description">{{ liste.description }}</p>

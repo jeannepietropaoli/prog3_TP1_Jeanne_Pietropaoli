@@ -1,1 +1,23 @@
-<p>admin works!</p>
+<app-contenu-principal-layout image="assets/app-logo.png" altImage="Logo de l'application Yell'ow">
+    <!-- Entête -->
+    <div infos-importantes>
+        <p class="page-details-entete__type">Gestion des chansons</p>
+        <h2 class="page-details-entete__titre">
+            Section Admin
+            <mat-icon class="verified">verified</mat-icon>
+        </h2>
+    </div>
+    <div infos-secondaires>
+        <span>Ajout</span>
+        <span class="spacer spacer--yellow"> • </span>
+        <span>Edition</span>
+        <span class="spacer spacer--yellow"> • </span>
+        <span>Suppression</span>
+    </div>
+
+    <!-- Contenu -->
+    <div contenu>
+        <!-- Liste de chansons -->
+        <app-tableau-chansons [chansons]="chansons"></app-tableau-chansons>
+    </div>
+</app-contenu-principal-layout>

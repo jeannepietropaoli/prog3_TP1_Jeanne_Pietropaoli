@@ -39,7 +39,11 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par nombre de lectures">
       Nb de lectures
     </th>
-    <td mat-cell *matCellDef="let chanson" [class]="classesChanson(chanson)"> {{chanson.nombreLecture}} </td>
+    <td mat-cell *matCellDef="let chanson" [class]="classesChanson(chanson)">
+      <app-tooltip [message]="chanson.nombreLecture | i18nPlural: tooltipNbLecturesMessage">
+        {{ chanson.nombreLecture | formatterNombreUnitesMiliersMillions }}
+      </app-tooltip>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

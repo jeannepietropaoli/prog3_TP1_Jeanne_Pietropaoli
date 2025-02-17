@@ -5,18 +5,26 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatIconModule } from "@angular/material/icon";
 import { DureeHeureMinSecPipe } from "../../pipes/duree-heure-min-sec.pipe";
 import { DureeFormatteDeuxChiffresPipe } from "../../pipes/duree-formatte-deux-chiffres.pipe";
+import { FormatterNombreUnitesMiliersMillionsPipe } from '../../pipes/formatter-nombre-unites-miliers-millions.pipe';
 import { RouterLink } from "@angular/router";
-
+import { I18nPluralPipe } from '@angular/common';
+import { TooltipComponent } from "../tooltip/tooltip.component";
 
 @Component({
   selector: 'app-tableau-chansons',
   standalone: true,
-  imports: [RouterLink, MatTableModule, MatSortModule, MatIconModule, DureeHeureMinSecPipe, DureeFormatteDeuxChiffresPipe],
+  imports: [RouterLink, MatTableModule, MatSortModule, MatIconModule, DureeHeureMinSecPipe, DureeFormatteDeuxChiffresPipe, FormatterNombreUnitesMiliersMillionsPipe, I18nPluralPipe, TooltipComponent],
   templateUrl: './tableau-chansons.component.html',
   styleUrl: './tableau-chansons.component.css'
 })
 export class TableauChansonsComponent {
   @Input() chansons: Chanson[] = [];
+
+  tooltipNbLecturesMessage: { [k: string]: string } = {
+    '=0': 'Aucune lecture',
+    '=1': '1 lecture',
+    'other': '# lectures'
+  };
 
   // classes conditionnelles en fonction du nombre de lectures
   classesChanson(chanson: Chanson) {

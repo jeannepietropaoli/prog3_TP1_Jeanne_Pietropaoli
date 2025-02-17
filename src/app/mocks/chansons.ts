@@ -23,9 +23,9 @@ export const CHANSONS: Chanson[] = [
       titre: "Morning Coffee",
       artiste: "Lofi Beats",
       nomAlbum: "Chill Vibes",
-      datePublication: "2021-03-15",
+      datePublication: "2025-01-18",
       duree: 3809,
-      nombreLecture: 125000,
+      nombreLecture: 2000236,
       paroles: [  
         'Lorem ipsum dolor.',
         'Sed do eiusmod.',
@@ -44,7 +44,7 @@ export const CHANSONS: Chanson[] = [
       titre: "Sunny Mornings",
       artiste: "Chillhop",
       nomAlbum: "Sunshine Day",
-      datePublication: "2020-05-20",
+      datePublication: "2025-02-16",
       duree: 3678,
       nombreLecture: 98,
       paroles: [
@@ -328,7 +328,7 @@ export const CHANSONS: Chanson[] = [
     artiste: "The Wanderers",
     nomAlbum: "Best of Rock",
     datePublication: "2025-01-18",
-    duree: 225,
+    duree: 25,
     nombreLecture: 189000,
     paroles: [
       "Thunder rolling.",

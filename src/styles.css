@@ -45,8 +45,9 @@ body {
 
 .page-details-entete__img {
   width: 200px;
-  height: auto;
-  object-fit: contain;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
   box-shadow: -3px 3px 10px rgb(56, 56, 56);
   padding: 12px;
   border-radius: 7px;
