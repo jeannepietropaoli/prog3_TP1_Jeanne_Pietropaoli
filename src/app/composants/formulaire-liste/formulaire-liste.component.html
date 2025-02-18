@@ -1,0 +1,108 @@
+<form #listeForm="ngForm">
+    <mat-dialog-content>
+        <div>
+            <mat-form-field>
+                <mat-label>Titre</mat-label>
+                <input matInput placeholder="Ex. Playlist des annees 2000..." type="text" required minlength="2" maxlength="50" name="titre"
+                    [(ngModel)]="liste.titre" #titre="ngModel" >
+            </mat-form-field>
+            <!-- Validations… mat-error -->
+            @if(titre.invalid && (titre.dirty || titre.touched) && titre.hasError('required')) {
+                <mat-error> Le titre est obligatoire. </mat-error>
+            }
+            @if(titre.invalid && (titre.dirty || titre.touched) && titre.hasError('minlength')) {
+                <mat-error> Le titre doit contenir au moins 2 caractères. </mat-error>
+            }
+            @if(titre.invalid && (titre.dirty || titre.touched) && titre.hasError('maxlength')) {
+                <mat-error>Le titre contenir au maximum 50 caractères.</mat-error>
+            }
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Sous-titre</mat-label>
+                <input matInput placeholder="Ex. Pour revivre en musique les annees 2000..." type="text" maxlength="50" name="sousTitre"
+                    [(ngModel)]="liste.sousTitre" #sousTitre="ngModel" >
+            </mat-form-field>
+            <!-- Validations… mat-error -->
+            @if(sousTitre.invalid && (sousTitre.dirty || sousTitre.touched) && titre.hasError('maxlength')) {
+                <mat-error>Le sous-titre contenir au maximum 50 caractères.</mat-error>
+            }
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Image</mat-label>
+                <input matInput placeholder="http:://mon-image..." maxlength="255" type="text" name="image"
+                    [(ngModel)]="liste.image" #image="ngModel" >
+            </mat-form-field>
+            <!-- Validations… mat-error -->
+            @if(image.invalid && (image.dirty || image.touched) && titre.hasError('maxlength')) {
+                <mat-error>L'image doit contenir au maximum 50 caractères.</mat-error>
+            }
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Cette playlist est..." required minlength="10" maxlength="255" name="description"
+                    [(ngModel)]="liste.description" #description="ngModel" ></textarea>
+            </mat-form-field>
+            <!-- Validations… mat-error -->
+            @if(description.invalid && (description.dirty || description.touched) && description.hasError('required')) {
+                <mat-error> La description est obligatoire. </mat-error>
+            }
+            @if(description.invalid && (description.dirty || description.touched) && description.hasError('minlength')) {
+                <mat-error> La description doit contenir au moins 10 caractères. </mat-error>
+            }
+            @if(description.invalid && (description.dirty || description.touched) && description.hasError('maxlength')) {
+                <mat-error>La description doit contenir au maximum 50 caractères.</mat-error>
+            }
+        </div>
+
+         <div>
+            <mat-form-field>
+                <mat-label>Type</mat-label>
+                <mat-select name="type" [(ngModel)]="liste.type">
+                    <mat-option value="Liste de lecture">Liste de lecture</mat-option>
+                    <mat-option value="Album">Album</mat-option>
+                    <mat-option value="Artiste">Artiste</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-radio-group name="verifie" [(ngModel)]="liste.verifie"> Verifie
+                <mat-radio-button value="1">Oui</mat-radio-button>
+                <mat-radio-button value="0">Non</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div>
+            <mat-radio-group name="visibilite" [(ngModel)]="liste.visibilite">Publique
+                <mat-radio-button value="1">Oui</mat-radio-button>
+                <mat-radio-button value="0">Non</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Date de publication</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Choisissez une date" required name="datePublication" [max]="dateActuelle" [(ngModel)]="liste.datePublication" #datePublication="ngModel">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+              @if(datePublication.invalid && (datePublication.dirty || datePublication.touched) && datePublication.hasError('required')) {
+                <mat-error> La date est obligatoire. </mat-error>
+            }
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Annuler</button>
+        @if(!liste.id) {
+            <button mat-button [disabled]="!listeForm.form.valid" (click)="ajouterListe(listeForm)">Ajouter</button>
+        } @else {
+            <button mat-button [disabled]="!listeForm.form.valid" (click)="editerListe(listeForm)">Valider</button>
+        }   
+    </mat-dialog-actions>
+</form>

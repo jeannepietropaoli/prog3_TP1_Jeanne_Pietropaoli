@@ -1,10 +1,10 @@
 <ul class="list">
-    @for (liste of listes; track liste.id) {
+    @for (liste of listes; let index=$index; track liste.id) {
         <li class="list__item">
-            <app-liste-sommaire [image]="liste.image || imageListeParDefaut" [titre]="liste.titre" [type]="liste.type" [sousTitre]="liste.sousTitre" [id]="liste.id" ></app-liste-sommaire>
+            <app-liste-sommaire [image]="liste.image || imageListeParDefaut" [titre]="liste.titre" [type]="liste.type" [sousTitre]="liste.sousTitre" [id]="liste.id || index" ></app-liste-sommaire>
             <!-- pour des propriétés optionnelles (comme image pour les listes de lecture): -->
             <!-- si aucun attribut image est fourni (absence de [image]='...'), cela passera à la valeur par défaut défini dans le @Input du composant liste-sommaire -->
-            <!-- si l'attribut image est fourni mais qu'aucune valeur lui est passé (par exemple ici si l'image n'est pas défini dans le mock), cela passera la valeur par défaut défini ci-dessous -->
+            <!-- si l'attribut image est fourni mais qu'aucune valeur lui est passé (par exemple ici si l'image n'est pas défini dans le mock), cela passera la valeur par défaut défini ci-dessus -->
         </li>
     } @empty {
         <p>Il n'y a pas de liste de lecture.</p>

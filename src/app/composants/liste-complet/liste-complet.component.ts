@@ -42,6 +42,7 @@ export class ListeCompletComponent {
     id: 0,
         titre: "Titre inconnu",
         type: "Liste de lecture",
+        image: "../../assets/logo-musique-defaut-orange",
         verifie: true,
         datePublication: "2025-02-17",
         visibilite: true,

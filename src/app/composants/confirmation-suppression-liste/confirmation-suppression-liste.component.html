@@ -1,0 +1,9 @@
+<mat-dialog-content>
+    <p>Etes-vous sur de vouloir supprimer cette liste:</p>
+    <p class="bold">Playlist: {{ liste.titre }}</p>
+    <p class="bold">Description: {{ liste.description }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button (click)="supprimerListe()">Supprimer</button>
+</mat-dialog-actions>

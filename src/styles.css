@@ -18,6 +18,10 @@ body {
     --mat-warn-contrast: #ffffff; /* White */
     --light-grey:#f3f1f1;
   }
+
+  .bold {
+    font-weight: 700;
+  }
   
 /* Style des pages détails */
 
@@ -162,4 +166,18 @@ button:hover,
 .btn__mat-icon {
   margin-right: 5px;
   font-size: 22px;
+}
+
+.btn--accent {
+  background-color: var(--mat-accent);
+  color: var(--mat-primary);
+}
+
+.btn--accent:hover {
+  background-color: var(--mat-primary);
+  color: white;
+}
+
+table {
+  margin: 20px 0;
 }

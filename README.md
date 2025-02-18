@@ -26,5 +26,9 @@ Le but est de créer une application de musique semblable à Spotify.
 
 ## Améliorations
 
-- réfléchir à un composant commun pour les détails des chansons et des listes (peut-être avec un mélange de ng-content et de passage de proprietes)
 - distinguer la liste de lecture sélectionnée dans la partie bibliothèque
+- context global a l'application possible ? Car beaucoup d'appels a l'API avec du data qui aurait pu etre reutilise (chansons, listes).
+- Connexion admin
+- Possibilite de rechercher et d'ajouter des chansons a des listes
+- Pastilles dans bibliotheque a gauche fonctionnelles
+- champ de recherche dans bibliotheque a gauche fonctionnelle

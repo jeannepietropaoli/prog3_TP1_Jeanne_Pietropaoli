@@ -29,7 +29,7 @@ export class ChansonCompleteComponent {
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['chansonId']) {
-      this.chanson = CHANSONS[this.chansonId];
+      this.getChanson(this.chansonId);
     }
   }
 

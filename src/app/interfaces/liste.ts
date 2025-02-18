@@ -1,7 +1,7 @@
 import { Chanson } from "./chanson";
 
 export interface Liste {
-    id: number; // doit etre optionnel 
+    id?: number; // doit etre optionnel 
     titre: string;
     sousTitre?: string;
     image?: string;

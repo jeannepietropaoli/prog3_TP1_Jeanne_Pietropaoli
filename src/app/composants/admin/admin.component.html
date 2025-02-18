@@ -1,7 +1,7 @@
 <app-contenu-principal-layout image="assets/app-logo.png" altImage="Logo de l'application Yell'ow">
     <!-- Entête -->
     <div infos-importantes>
-        <p class="page-details-entete__type">Gestion des chansons</p>
+        <p class="page-details-entete__type">Gestion des listes</p>
         <h2 class="page-details-entete__titre">
             Section Admin
             <mat-icon class="verified">verified</mat-icon>
@@ -18,6 +18,6 @@
     <!-- Contenu -->
     <div contenu>
         <!-- Liste de chansons -->
-        <app-tableau-chansons [chansons]="chansons"></app-tableau-chansons>
+        <app-tableau-listes-btn-actions></app-tableau-listes-btn-actions>
     </div>
 </app-contenu-principal-layout>

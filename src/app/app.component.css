@@ -4,9 +4,13 @@
 }
 
 .page__content {
-    width: 100%;
     min-height: 100vh;
     position: relative;
+}
+
+.page__sidenav {
+    width: auto;
+    max-width: 35%;
 }
 
 .menu-btn {
@@ -17,6 +21,25 @@
     border-radius: 0 0 50% 0;
 }
 
+.menu-btn--mobile {
+    left: auto;
+    right: 8px;
+    border-radius: 0 0 0 50%;
+    z-index: 0;
+    display: none;
+}
+
 mat-drawer {
     border-radius: 0 0 22px 0;
+}
+
+@media screen and (max-width: 850px) {
+    .menu-btn--mobile {
+        display: block;
+    }
+
+    .page__sidenav {
+        width: 100%;
+        max-width: 100%;
+    }
 }

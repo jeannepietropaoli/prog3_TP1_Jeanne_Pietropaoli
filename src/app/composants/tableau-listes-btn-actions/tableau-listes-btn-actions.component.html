@@ -1,0 +1,103 @@
+<button class="btn--accent" aria-label="Ajouter" (click)="openDialogFormulaire()"><mat-icon>add</mat-icon></button>
+
+<!-- Tableau avec tri par ordre d'Angular Material -->
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    
+    <!-- Colonne id (id de la liste) -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par id">
+        #id
+      </th>
+      <td mat-cell *matCellDef="let liste"> {{liste.id}} </td>
+    </ng-container>
+  
+    <!-- Colonne titre -->
+    <ng-container matColumnDef="titre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par titre">
+        Titre
+      </th>
+      <td mat-cell *matCellDef="let liste"> {{liste.titre}} </td>
+    </ng-container>
+  
+    <!-- Colonne sous-titre -->
+    <ng-container matColumnDef="sousTitre">
+      <th mat-header-cell *matHeaderCellDef>
+        Sous-titre
+      </th>
+      <td mat-cell *matCellDef="let liste"> {{liste.sousTitre}} </td>
+    </ng-container>
+  
+    <!-- Colonne image -->
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-icon class="table-header__icon">image</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let liste"> <img [src]="liste.image" alt="Image de la liste"> </td>
+    </ng-container>
+  
+    <!-- Colonne description -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>
+        Description
+      </th>
+      <td mat-cell *matCellDef="let liste"> {{liste.description}} </td>
+    </ng-container>
+
+    <!-- Colonne type -->
+    <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Trier par type">
+          Type
+        </th>
+        <td mat-cell *matCellDef="let liste"> {{liste.type}} </td>
+    </ng-container>
+
+    <!-- Colonne verifie -->
+    <ng-container matColumnDef="verifie">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon class="table-header__icon">verified</mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let liste">
+            <mat-icon class="table-header__icon">{{liste.verifie === '1' ? 'check' : 'close'}}</mat-icon>
+        </td>
+    </ng-container>
+
+     <!-- Colonne date de publication -->
+     <ng-container matColumnDef="datePublication">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par date de publication">
+          Date de publication
+        </th>
+        <td mat-cell *matCellDef="let liste"> {{liste.datePublication}} </td>
+    </ng-container>
+
+    <!-- Colonne visibilite -->
+    <ng-container matColumnDef="visibilite">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-icon class="table-header__icon">lock_open</mat-icon>
+        </th>
+        <td mat-cell *matCellDef="let liste">
+            <mat-icon class="table-header__icon">{{liste.visibilite === '1' ? 'check' : 'close'}}</mat-icon>
+        </td>
+    </ng-container>
+
+     <!-- Colonne nombre de sauvegardes -->
+     <ng-container matColumnDef="nombreSauvegardes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par nombre de sauvegardes">
+            Sauvegardes
+        </th>
+        <td mat-cell *matCellDef="let liste"> {{liste.nombreSauvegardes}} </td>
+    </ng-container>
+
+      <!-- Colonne boutons d'action -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>
+            Actions
+        </th>
+        <td mat-cell *matCellDef="let liste">
+            <button class="btn--action" aria-label="Editer" (click)="openDialogFormulaire(liste)"><mat-icon>edit</mat-icon></button>
+            <button class="btn--action" aria-label="Supprimer" (click)="openDialogSuppression(liste)"><mat-icon>delete</mat-icon></button>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

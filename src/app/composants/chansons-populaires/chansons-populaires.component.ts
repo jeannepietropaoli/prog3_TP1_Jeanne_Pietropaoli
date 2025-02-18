@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { TableauChansonsComponent } from "../tableau-chansons/tableau-chansons.component";
-import { CHANSONS } from '../../mocks/chansons';
 import { Chanson } from '../../interfaces/chanson';
 import { ContenuPrincipalLayoutComponent } from "../contenu-principal-layout/contenu-principal-layout.component";
 import { MatIcon } from '@angular/material/icon';
 import { MatIconModule } from '@angular/material/icon';
 import { ChansonsPopulairesPipe } from '../../pipes/chansons-populaires.pipe';
+import { ChansonService } from '../../services/chanson.service';
 
 @Component({
   selector: 'app-chansons-populaires',
@@ -15,5 +15,22 @@ import { ChansonsPopulairesPipe } from '../../pipes/chansons-populaires.pipe';
   styleUrl: './chansons-populaires.component.css'
 })
 export class ChansonsPopulairesComponent {
-  chansons:Chanson[] = CHANSONS;
+  constructor(private chansonService: ChansonService) { }
+
+  chansons:Chanson[] = [];
+
+  ngOnInit(): void {
+    this.getChansons();
+  }
+
+   ngOnChanges(changes: SimpleChanges) {
+      if(changes['chansonId']) {
+        this.getChansons();
+      }
+    }
+
+  getChansons() : void {
+    this.chansonService.getChansons()
+      .subscribe(res => this.chansons = res.chansons)
+  }
 }

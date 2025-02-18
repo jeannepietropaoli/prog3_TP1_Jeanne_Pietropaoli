@@ -1,0 +1,32 @@
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.table-header__icon {
+    font-size: 1.25rem;
+}
+
+::ng-deep tbody > tr:hover {
+    cursor: pointer;
+    background-color: rgb(243, 243, 243);
+}
+
+table img {
+    width: 70px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+mat-dialog-container {
+    width: 90%;
+    background-color: red;
+}
+
+.btn--action {
+    background-color: transparent;
+    color: var(--mat-primary);
+}
+
+.btn--action:hover {
+    color: var(--mat-accent);
+}

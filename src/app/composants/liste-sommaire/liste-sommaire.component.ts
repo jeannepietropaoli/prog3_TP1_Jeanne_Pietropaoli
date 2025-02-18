@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './liste-sommaire.component.css'
 })
 export class ListeSommaireComponent {
-  @Input() image: string = 'https://creazilla-store.fra1.digitaloceanspaces.com/icons/3262629/library-music-icon-sm.png';
+  @Input() image: string = '../../assets/logo-musique-defaut-orange';
   @Input() titre: string = 'Titre inconnu';
   @Input() sousTitre?: string = '';
   @Input() type: string = 'Type inconnu';

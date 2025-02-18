@@ -1,4 +1,4 @@
-<app-contenu-principal-layout [image]="liste.image || ''" altImage="Image de la liste de lecture">
+<app-contenu-principal-layout [image]="liste.image ?? ''" altImage="Image de la liste de lecture">
     <!-- Entête -->
     <div infos-importantes>
         <p class="page-details-entete__type">{{ liste.type }}</p>

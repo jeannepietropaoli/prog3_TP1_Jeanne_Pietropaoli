@@ -16,14 +16,13 @@ export class BibliothequeComponent {
   constructor(private listeService: ListeService) { }
 
   listes: Liste[] = [];
-  // j'ai choisi de mettre les listes ici car avec les pastilles (chips) dans l'entête de la bibliothèque qui serviront de filtres des listes, il faudra que les listes soient partagées entre bibliotheque-entete et bibliotheque-listes
 
   ngOnInit(): void {
     this.getListes();
   }
 
   getListes() : void {
-    this.listeService.getListes()
+    this.listeService.getListesPubliques()
       .subscribe(res => this.listes = res.listes)
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, SimpleChanges } from '@angular/core';
 import { ContenuPrincipalLayoutComponent } from "../contenu-principal-layout/contenu-principal-layout.component";
 import { MatIcon } from '@angular/material/icon';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,6 +8,7 @@ import { CHANSONS } from '../../mocks/chansons';
 import { ChansonsSortiesAnneeXPipe } from '../../pipes/chansons-sorties-annee-x.pipe';
 import { ChansonsMoinsConnuesPipe } from '../../pipes/chansons-moins-connues.pipe';
 import { ChansonsAlbumsBestOfPipe } from '../../pipes/chansons-albums-best-of.pipe';
+import { ChansonService } from '../../services/chanson.service';
 
 @Component({
   selector: 'app-themes',
@@ -18,7 +19,24 @@ import { ChansonsAlbumsBestOfPipe } from '../../pipes/chansons-albums-best-of.pi
   providers: [ChansonsSortiesAnneeXPipe, ChansonsMoinsConnuesPipe, ChansonsAlbumsBestOfPipe]
 })
 export class ThemesComponent {
-  chansons: Chanson[] = CHANSONS;
+  constructor(private chansonService: ChansonService) { }
+
+  chansons:Chanson[] = [];
+
+  ngOnInit(): void {
+    this.getChansons();
+  }
+
+   ngOnChanges(changes: SimpleChanges) {
+      if(changes['chansonId']) {
+        this.getChansons();
+      }
+    }
+
+  getChansons() : void {
+    this.chansonService.getChansons()
+      .subscribe(res => this.chansons = res.chansons)
+  }
 
   private chansonsSortiesAnneeXPipe = inject(ChansonsSortiesAnneeXPipe);
   private chansonsMoinsConnuesPipe = inject(ChansonsMoinsConnuesPipe);
@@ -38,6 +56,5 @@ export class ThemesComponent {
 
   selectionnerTheme(themeId: number) : void {
     this.themeSelectionne = this.themes.find(theme => themeId === theme.id) || this.themes[0];
-    console.log(this.chansonsFiltrees)
   }
 }

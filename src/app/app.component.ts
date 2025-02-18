@@ -10,11 +10,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ListeSommaireComponent } from './composants/liste-sommaire/liste-sommaire.component';
 import { LISTES } from './mocks/listes';
 import { BarreNavigationComponent } from "./composants/barre-navigation/barre-navigation.component";
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BibliothequeComponent, ListeCompletComponent, MatSidenavModule, BibliothequeEnteteComponent, MatIconModule, MatButtonModule, MatToolbarModule, ListeSommaireComponent, BarreNavigationComponent],
+  imports: [MatNativeDateModule, MatDatepickerModule, RouterOutlet, BibliothequeComponent, ListeCompletComponent, MatSidenavModule, BibliothequeEnteteComponent, MatIconModule, MatButtonModule, MatToolbarModule, ListeSommaireComponent, BarreNavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
