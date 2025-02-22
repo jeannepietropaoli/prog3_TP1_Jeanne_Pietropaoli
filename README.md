@@ -2,9 +2,7 @@
 
 ## Warning
 
-Projet en cours de développement.
-
-La base de l'interface utilisateur, la base de données et l'API sont faits. La prochaine étape intégrer les requetes à l'API pour remplacer les mocks dans l'application.
+Projet en cours de développement - reste la mise en ligne de l'application
 
 ## Liens
 
@@ -28,7 +26,7 @@ Le but est de créer une application de musique semblable à Spotify.
 
 - Selection visuelle de la page dans le menu de navigation (en haut à droite)
 - Selection visuelle de la bonne liste (menu de gauche) lorsque l'on revient sur l'accueil
-- contexte global à l'application possible ? Car beaucoup d'appels a l'API avec du data qui aurait pu être réutilisé (chansons, listes) / Réogarnisation du passage des données (liste selectionnée etc) pour plus d'efficacité
+- Contexte global à l'application possible ? Car beaucoup d'appels a l'API avec du data qui aurait pu être réutilisé (chansons, listes) / Réogarnisation du passage des données (liste selectionnée etc) pour plus d'efficacité
 - Connexion admin
 - Possibilité de rechercher et d'ajouter des chansons à des listes
 - Ajout de la fonction de recherche dans le tableau admin
