@@ -15,14 +15,18 @@
     </div>
     <div contenu class="theme-contenu">
         <div class="theme-contenu__btns">
-            @for(theme of themes; track theme.id) {
-                <button mat-fab extended (click)="selectionnerTheme(theme.id)" [classList]="themeSelectionne === theme ? 'btn--selected' : ''">
-                    <mat-icon class="btn__mat-icon">{{ theme.maticon }}</mat-icon>
-                    {{ theme.nom }}
-                  </button>
+            @for(theme of themes; track theme.nom) {
+                <button mat-fab extended [classList]="nomTheme === theme.nom ? 'btn--selected' : ''" >
+                    <a [routerLink]="['/themes', theme.nom]">
+                        <mat-icon class="btn__mat-icon">{{ theme.maticon }}</mat-icon>
+                        {{ theme.nomDisplay }}
+                    </a>
+                </button>
             }
         </div>
-        <p class="theme-contenu__description">{{ themeSelectionne.description }}</p>
-        <app-tableau-chansons [chansons]="chansonsFiltrees"></app-tableau-chansons>
+        <div>
+            <p class="theme-contenu__description">{{ theme?.description }}</p>
+            <app-tableau-chansons [chansons]="chansonsFiltrees"></app-tableau-chansons>
+        </div>
     </div>
 </app-contenu-principal-layout>
