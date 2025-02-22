@@ -1,5 +1,5 @@
 export interface Chanson {
-    id: number;
+    id?: number;
     titre: string;
     artiste: string;
     nomAlbum: string;

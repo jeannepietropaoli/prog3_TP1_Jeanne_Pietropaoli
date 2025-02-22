@@ -9,13 +9,15 @@ import { AdminComponent } from './composants/admin/admin.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'liste-de-lecture/0', pathMatch: 'full' },
-    // route par défaut, permet d'avoir la premiere liste de lecture affichée avant même d'avoir sélectionné une liste
+    // route par défaut, permet d'avoir la première liste de lecture affichée avant même d'avoir sélectionné une liste
     { path: 'liste-de-lecture/:listeId', component: ListeCompletComponent },
     // liste de lecture complète seule
     { path: 'details-chanson/:chansonId', component: ChansonCompleteComponent },
     // chanson complète seule,
     { path: 'a-propos', component: AProposComponent },
     { path: 'chansons-populaires', component: ChansonsPopulairesComponent },
+    { path: 'themes', component: ThemesComponent },
+    { path: 'themes', component: ThemesComponent },
     { path: 'themes', component: ThemesComponent },
     { path: 'admin', component: AdminComponent },
     { path: '**', redirectTo: 'liste-de-lecture/0' }

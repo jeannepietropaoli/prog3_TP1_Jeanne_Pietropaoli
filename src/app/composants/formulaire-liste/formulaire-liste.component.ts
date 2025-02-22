@@ -44,8 +44,6 @@ export class FormulaireListeComponent {
 
   liste: Liste;
 
-  // @Input() liste!: Liste;
-
   dateActuelle = new Date();
 
   ajouterListe(listeForm: NgForm) {

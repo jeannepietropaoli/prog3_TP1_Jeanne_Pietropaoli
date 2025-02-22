@@ -1,7 +1,7 @@
 <!-- Entête -->
 <div class="page-details-entete">
     <!-- Image -->
-    <img class="page-details-entete__img" [src]="image" [alt]="altImage">
+    <img class="page-details-entete__img" [src]="image" [alt]="altImage" #imageElement (error)="remplacerImage(imageElement)">
 
     <div class="page-details-entete__content">
         <!-- Infos importantes (type et titre) -->

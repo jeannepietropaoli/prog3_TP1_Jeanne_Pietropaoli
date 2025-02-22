@@ -8,16 +8,27 @@ import { FormulaireListeComponent } from '../formulaire-liste/formulaire-liste.c
 import { ListeService } from '../../services/liste.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmationSuppressionListeComponent } from '../confirmation-suppression-liste/confirmation-suppression-liste.component';
+import { TooltipComponent } from '../tooltip/tooltip.component';
+import { I18nPluralPipe } from '@angular/common';
+import { FormatterNombreUnitesMiliersMillionsPipe } from '../../pipes/formatter-nombre-unites-miliers-millions.pipe';
 
 @Component({
   selector: 'app-tableau-listes-btn-actions',
   standalone: true,
-  imports: [MatSort, MatSortModule, MatTableModule, MatIconModule],
+  imports: [MatSort, MatSortModule, MatTableModule, MatIconModule, I18nPluralPipe, TooltipComponent, FormatterNombreUnitesMiliersMillionsPipe],
   templateUrl: './tableau-listes-btn-actions.component.html',
   styleUrl: './tableau-listes-btn-actions.component.css'
 })
 export class TableauListesBtnActionsComponent {
   constructor(private listeService: ListeService, private dialog: MatDialog) { }
+
+  tooltipNbSauvegardesMessage: { [k: string]: string } = {
+    '=0': 'Aucune sauvegarde',
+    '=1': '1 sauvegarde',
+    'other': '# sauvegardes'
+  };
+
+  imageParDefaut: string = "../../../assets/logo-musique-defaut-jaune.png";
 
   listes: Liste[] = [];
 
@@ -84,5 +95,9 @@ export class TableauListesBtnActionsComponent {
         this.getListes();
       }
     })
+  }
+
+  remplacerImage(imageElement: HTMLImageElement) {
+    imageElement.setAttribute('src', this.imageParDefaut)
   }
 }

@@ -9,10 +9,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './liste-sommaire.component.css'
 })
 export class ListeSommaireComponent {
-  @Input() image: string = '../../assets/logo-musique-defaut-orange';
+  imageParDefaut: string = "../../../assets/logo-musique-defaut-jaune.png";
+
+  @Input() image: string = this.imageParDefaut;
   @Input() titre: string = 'Titre inconnu';
   @Input() sousTitre?: string = '';
   @Input() type: string = 'Type inconnu';
   @Input() id: number = 0;
   @Input() listeId: number = 0;
+  @Input() selectionnee: Boolean = false;
+
+  remplacerImage(imageElement: HTMLImageElement) {
+    imageElement.setAttribute('src', this.imageParDefaut)
+  }
+
 }

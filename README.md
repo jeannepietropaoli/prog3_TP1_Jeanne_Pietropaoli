@@ -26,9 +26,12 @@ Le but est de créer une application de musique semblable à Spotify.
 
 ## Améliorations
 
-- distinguer la liste de lecture sélectionnée dans la partie bibliothèque
-- context global a l'application possible ? Car beaucoup d'appels a l'API avec du data qui aurait pu etre reutilise (chansons, listes).
+- Selection visuelle de la page dans le menu de navigation (en haut à droite)
+- Selection visuelle de la bonne liste (menu de gauche) lorsque l'on revient sur l'accueil
+- contexte global à l'application possible ? Car beaucoup d'appels a l'API avec du data qui aurait pu être réutilisé (chansons, listes) / Réogarnisation du passage des données (liste selectionnée etc) pour plus d'efficacité
 - Connexion admin
-- Possibilite de rechercher et d'ajouter des chansons a des listes
-- Pastilles dans bibliotheque a gauche fonctionnelles
-- champ de recherche dans bibliotheque a gauche fonctionnelle
+- Possibilité de rechercher et d'ajouter des chansons à des listes
+- Ajout de la fonction de recherche dans le tableau admin
+- Ajout d'un tableau de gestion des chansons
+- Pastilles dans bibliotheque à gauche fonctionnelles
+- Champ de recherche dans bibliotheque à gauche fonctionnelle

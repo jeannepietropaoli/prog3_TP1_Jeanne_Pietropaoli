@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { LISTES } from '../../mocks/listes';
+import { Component, Input, Output } from '@angular/core';
 import { BibliothequeEnteteComponent } from "../bibliotheque-entete/bibliotheque-entete.component";
 import { BibliothequeListesComponent } from "../bibliotheque-listes/bibliotheque-listes.component";
 import { Liste } from '../../interfaces/liste';
-import { ListeService } from '../../services/liste.service';
+import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-bibliotheque',
@@ -13,16 +12,6 @@ import { ListeService } from '../../services/liste.service';
   styleUrl: './bibliotheque.component.css'
 })
 export class BibliothequeComponent {
-  constructor(private listeService: ListeService) { }
-
-  listes: Liste[] = [];
-
-  ngOnInit(): void {
-    this.getListes();
-  }
-
-  getListes() : void {
-    this.listeService.getListesPubliques()
-      .subscribe(res => this.listes = res.listes)
-  }
+  @Input() listes: Liste[] = [];
+  @Input() listeSelectionneeId: number = 0;
 }

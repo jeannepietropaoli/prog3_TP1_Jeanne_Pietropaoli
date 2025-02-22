@@ -32,7 +32,7 @@
       <th mat-header-cell *matHeaderCellDef>
         <mat-icon class="table-header__icon">image</mat-icon>
       </th>
-      <td mat-cell *matCellDef="let liste"> <img [src]="liste.image" alt="Image de la liste"> </td>
+      <td mat-cell *matCellDef="let liste"> <img [src]="liste.image" alt="Image de la liste" #imageElement (error)="remplacerImage(imageElement)"> </td>
     </ng-container>
   
     <!-- Colonne description -->
@@ -82,9 +82,13 @@
      <!-- Colonne nombre de sauvegardes -->
      <ng-container matColumnDef="nombreSauvegardes">
         <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par nombre de sauvegardes">
-            Sauvegardes
+          <mat-icon class="table-header__icon">save</mat-icon>
         </th>
-        <td mat-cell *matCellDef="let liste"> {{liste.nombreSauvegardes}} </td>
+        <td mat-cell *matCellDef="let liste">
+          <app-tooltip [message]="liste.nombreSauvegardes | i18nPlural: tooltipNbSauvegardesMessage">
+            {{ liste.nombreSauvegardes | formatterNombreUnitesMiliersMillions }}
+          </app-tooltip>
+        </td>
     </ng-container>
 
       <!-- Colonne boutons d'action -->

@@ -13,8 +13,9 @@ th.mat-sort-header-sorted {
 
 table img {
     width: 70px;
-    aspect-ratio: 1/1;
+    height: 70px;
     object-fit: cover;
+    margin: 5px;
 }
 
 mat-dialog-container {
@@ -29,4 +30,12 @@ mat-dialog-container {
 
 .btn--action:hover {
     color: var(--mat-accent);
+}
+
+table {
+    margin: 20px !important;
+}
+
+table tr {
+    cursor: auto;
 }

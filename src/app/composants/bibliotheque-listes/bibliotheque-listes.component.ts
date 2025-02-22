@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, SimpleChanges } from '@angular/core';
 import { ListeSommaireComponent } from "../liste-sommaire/liste-sommaire.component";
-import { LISTES } from '../../mocks/listes';
 import { Liste } from '../../interfaces/liste';
+import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-bibliotheque-listes',
@@ -12,5 +12,22 @@ import { Liste } from '../../interfaces/liste';
 })
 export class BibliothequeListesComponent {
   @Input() listes: Liste[] = [];
-  imageListeParDefaut = 'assets/logo-musique-defaut.png';
+  @Input() listeSelectionneeId: number = 0;
+
+  imageListeParDefaut: string = "../../../assets/logo-musique-defaut-jaune.png";
+
+  ngOnInit() {
+    this.listeSelectionneeId = this.listeSelectionneeId;
+  }
+
+  
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['listeSelectionneeId']) {
+      this.listeSelectionneeId = this.listeSelectionneeId;
+    }
+  }
+  
+  selectionnerListe(listeId: number) : void {
+    this.listeSelectionneeId = listeId;
+  }
 }

@@ -28,7 +28,11 @@ export class ListeCompletComponent {
 
   getListe(listeId: number) : void {
     this.listeService.getListe(listeId)
-      .subscribe(res => this.liste = res.liste)
+      .subscribe(res => {
+        if(res.liste) {
+          this.liste = res.liste
+        }
+      })
   }
 
 
@@ -39,10 +43,9 @@ export class ListeCompletComponent {
   }
 
   liste: Liste = {
-    id: 0,
         titre: "Titre inconnu",
         type: "Liste de lecture",
-        image: "../../assets/logo-musique-defaut-orange",
+        image: "../../../assets/logo-musique-defaut-jaune.png",
         verifie: true,
         datePublication: "2025-02-17",
         visibilite: true,

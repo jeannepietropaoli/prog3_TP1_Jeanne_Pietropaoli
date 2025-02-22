@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { BibliothequeComponent } from "./composants/bibliotheque/bibliotheque.component";
 import { ListeCompletComponent } from './composants/liste-complet/liste-complet.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,6 +12,8 @@ import { LISTES } from './mocks/listes';
 import { BarreNavigationComponent } from "./composants/barre-navigation/barre-navigation.component";
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { Liste } from './interfaces/liste';
+import { ListeService } from './services/liste.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,26 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(private listeService: ListeService, private router: Router) { }
+
+  listes: Liste[] = [];
+
+  listeSelectionneeId: number = 0;
+
+  ngOnInit(): void {
+    this.getListes();
+  }
+
+  getListes() : void {
+    this.listeService.getListesPubliques()
+      .subscribe(res => {
+        this.listes = res.listes;
+        this.listeSelectionneeId = this.listes[0].id || 0;
+        this.router.navigate([`liste-de-lecture/${this.listeSelectionneeId}`]);
+      })
+  }
+
   title = 'app-musique-jeanne-pietropaoli';
-  liste = LISTES[0];
+
   menuOuvert: boolean = true;
 }

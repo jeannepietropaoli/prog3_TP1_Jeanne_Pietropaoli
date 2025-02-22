@@ -1,5 +1,5 @@
-<a [routerLink]="['/liste-de-lecture', id]" class="liste-sommaire">
-    <img [src]="image" alt="Image de la liste de lecture" class="liste-sommaire__logo">
+<a [routerLink]="['/liste-de-lecture', id]" class="liste-sommaire" [class]="{ 'liste-sommaire--selectionnee': selectionnee }">
+    <img [src]="image" alt="Image de la liste de lecture" #imageElement (error)="remplacerImage(imageElement)" class="liste-sommaire__logo">
     <div>
         <h2 class="liste-sommaire__titre">{{ titre }}</h2>
         <div>

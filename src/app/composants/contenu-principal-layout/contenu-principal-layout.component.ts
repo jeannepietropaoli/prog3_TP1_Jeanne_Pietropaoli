@@ -8,6 +8,12 @@ import { Component, Input } from '@angular/core';
   styleUrl: './contenu-principal-layout.component.css'
 })
 export class ContenuPrincipalLayoutComponent {
+  imageParDefaut: string = "../../../assets/logo-musique-defaut-jaune.png";
+  
   @Input() image: string = 'assets/app-logo.png';
   @Input() altImage: string = 'Image de la page';
+
+  remplacerImage(imageElement: HTMLImageElement) {
+    imageElement.setAttribute('src', this.imageParDefaut)
+  }
 }
